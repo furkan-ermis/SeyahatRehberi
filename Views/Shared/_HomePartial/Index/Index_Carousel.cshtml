@@ -1,0 +1,86 @@
+﻿<style>
+
+    .container-fluid.main{
+  position: relative; /* To make the navbar positions relative to this container */
+  padding: 0;
+}
+
+.carousel .background {
+  background-position: center center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 700px;
+}
+
+@@media (max-width:991px) {
+  .carousel .background {
+    background-size: cover; /* To make the background image looks good */
+  }
+}
+
+.carousel .background.a {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/Content/travel/assets/images/banner1.jpg");
+}
+
+/* CSS Hack to trigger GPU for smooth transition */
+
+/* CSS Hack to trigger GPU for smooth transition */
+
+.covertext {
+  position: absolute; /* To make the div to be place anywhere. It is out of the document flow */
+  top: 200px; /* The distance between the div with the top of document */
+  left: 0px; /* Make the div full width */
+  right: 0px; /* Make the div full width */
+}
+
+.title {
+  font-family: Verdana;
+  font-weight: 600;
+  font-size: 60px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.subtitle {
+  font-family: Verdana;
+  font-size: 23px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.explore {
+  text-align: center;
+  margin-top: 10px;
+}
+        .explore .btn:focus,
+        .explore .btn:active:focus,
+        .explore .btn.active:focus,
+        .explore .btn.focus,
+        .explore .btn:active.focus,
+        .explore .btn.active.focus {
+            color: #ffffff;
+            outline: none;
+        }
+</style>
+<div class="container-fluid main">
+
+    <div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel" data-interval="3000">
+        <div class="carousel-inner" role="listbox">
+            <div class="item active background a"></div>
+        </div>
+    </div>
+
+    <div class="covertext">
+        <div class="col-lg-10" style="float:none; margin:0 auto;">
+            <div class="container">
+                <h1 class="title">Start Reading</h1>
+                <h3 class="subtitle">Harika Bir Yer Keşfetmeye Başla</h3>
+            </div>
+            <div class="col-xs-12 explore">
+                <a href="@Url.Content("~/Travel/BlogList")"><button type="button" class="btn btn-style btn-secondary explorebtn">EXPLORE</button></a>
+            </div>
+
+        </div>
+    </div>
+
+</div>

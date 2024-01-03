@@ -1,0 +1,109 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>User Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc."
+          name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="~/Content/Panel/assets/images/favicon.ico" />
+
+    <!-- App css -->
+
+    <link href="~/Content/Panel/assets/css/app.min.css"
+          rel="stylesheet"
+          type="text/css"
+          id="app-style" />
+
+    <!-- icons -->
+    <link href="~/Content/Panel/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<!-- body start -->
+<body class="loading"
+      data-layout-color="dark"
+      data-layout-mode="default"
+      data-layout-size="fluid"
+      data-topbar-color="dark" 
+      data-leftbar-position="fixed"
+      data-leftbar-color="dark"
+      data-leftbar-size="default"
+      data-sidebar-user="true">
+    <div id="wrapper">
+        <div class="navbar-custom">
+
+            <ul class="d-flex align-items-center list-unstyled topnav-menu topnav-menu-left mb-0">
+                <li>
+                    <button class="button-menu-mobile disable-btn waves-effect">
+                        <i class="fe-menu"></i>
+                    </button>
+                </li>
+                <li>
+                    <h1 class="page-title-main">Welcome @ViewBag.userName</h1>
+                </li>
+                <li class="text-center ">
+                    <a href="@Url.Action("Index", "Home")" class="btn btn-outline-danger nav-item">Home</a>
+                    &nbsp;
+                    &nbsp; 
+                </li>
+                <li class="text-center ">
+                    <a href="@Url.Action("Index", "Account")" class="btn btn-outline-danger nav-item">Account</a>
+                    &nbsp;
+                    &nbsp;
+                </li>
+                <li>
+                    <a href="@Url.Action("Logout", "Security")" class="btn  btn-outline-danger nav-item">Logout</a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="left-side-menu">
+            <div class="h-100" data-simplebar>
+                <div class="user-box text-center">
+                    <a href="@Url.Action("Index", "Account")"><img src="@ViewBag.userImage"
+     alt="user-img"
+     style="width: 100px; height: 100px"
+     title="Mat Helme"
+     class="rounded-circle img-thumbnail avatar-md" /></a>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="@Url.Action("Logout", "Security")">
+                                <i class="mdi mdi-power" style="font-size: 30px"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        
+            
+        <div class="content-page">
+            <div class="content">
+                <div class="container-fluid">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/Panel/assets/libs/jquery/jquery.min.js"></script>
+    <script src="~/Content/Panel/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/Panel/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="~/Content/Panel/assets/libs/node-waves/waves.min.js"></script>
+    <script src="~/Content/Panel/assets/libs/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="~/Content/Panel/assets/libs/jquery.counterup/jquery.counterup.min.js"></script>
+    <script src="~/Content/Panel/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="~/Content/Panel/assets/libs/jquery-tabledit/jquery.tabledit.min.js"></script>
+    <script src="~/Content/Panel/assets/js/pages/tabledit.init.js"></script>
+    <script src="~/Content/Panel/assets/js/app.min.js"></script>
+</body>
+
+<!-- Mirrored from coderthemes.com/adminto/layouts/tables-editable.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 May 2022 10:17:06 GMT -->
+</html>

@@ -1,0 +1,46 @@
+﻿@using SeyahatRehberi.ViewModel
+@model List<PopulerCitiesViewModel>
+<div class="best-rooms py-5">
+    <div class="container py-md-5">
+            <div class="title-content text-left mb-lg-5 mb-4">
+                <h3 class="hny-title text-danger">Popüler Şehirler</h3>
+            </div>
+            <div  class="ban-content-inf row">
+                <a href="@Url.Action("BlogList", "Travel", new { @Model[0].CityId })" class="maghny-gd-1 col-lg-6">
+                    <div class="maghny-grid">
+                        <figure class="effect-lily border-radius  m-0">
+                            <img class="img-fluid" src="@Model[0].Image" alt="" style="height:350px !important" />
+                            <figcaption>
+                                <div>
+                                    <h2 class="text-warning">@Model[0].CityName</h2>
+                                    <p>Blog Sayısı: @Model[0].BlogCount </p>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </a>
+
+                <div class="maghny-gd-1 col-lg-6 mt-lg-0 ">
+                    <div class="row">
+                        @for (int i = 1; i < Model.Count(); i++)
+                        {
+                            <a href="@Url.Action("BlogList", "Travel", new { @Model[i].CityId })" class="maghny-gd-1 col-6 @((i == 1 || i == 2) ? " " : "mt-4")">
+                                <div class="maghny-grid">
+                                    <figure class="effect-lily border-radius">
+                                        <img style="height:160px" class="img-fluid" src="@Model[i].Image" alt="" />
+                                        <figcaption style="bottom:80px">
+                                            <div>
+                                                <span>Blog Sayısı: @Model[i].BlogCount</span>
+                                                <h2 class="text-warning">@Model[i].CityName</h2>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </a>
+                        }
+                    </div>
+                </div>
+
+            </div>
+    </div>
+</div>

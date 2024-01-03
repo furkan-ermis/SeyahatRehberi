@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.Partial("~/Views/Shared/_HomePartial/Index/Index_Carousel.cshtml")
+@Html.Action("IndexPartialBlogs", "Home")
+@Html.Action("IndexPartialCountStats", "Home")
+@Html.Action("IndexPartialPopulerCities", "Home")
+@if (HttpContext.Current.User.Identity.IsAuthenticated)
+{
+    @Html.Partial("~/Views/Shared/_HomePartial/Index/WriteBlog.cshtml")
+}
+    @Html.Action("IndexPartialLatestBlogs", "Home")

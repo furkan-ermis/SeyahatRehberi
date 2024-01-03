@@ -1,0 +1,48 @@
+﻿@using SeyahatRehberi.ViewModel
+@model List<WaitingCommentsViewModel>
+@{
+    ViewBag.Title = "GetAwaitingCommentList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Approve Comments</h2>
+
+
+<div class="card">
+    <div class="card-body">
+
+        <div class="table-responsive">
+            <table class="table table-centered mb-0" id="">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>UserId</th>
+                        <th>Username</th>
+                        <th>CommentDate</th>
+                        <th>BlogTitle</th>
+                        <th>Comment</th>
+                        <th colspan="3">Settings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.CommentId</td>
+                            <td>@item.UserId</td>
+                            <td>@item.Username</td>
+                            <td>@item.CommentDate</td>
+                            <td>@item.CommentDate</td>
+                            <td>@item.Comment</td>
+                            <td>
+                                @Html.ActionLink("Details", "CommentDetail", "Admin", new { commentId = item.CommentId }, new { @class = "btn btn-warning" }) |
+                                @Html.ActionLink("Approve", "ApproveComment", "Admin", new { commentId = item.CommentId }, new { @class = "btn btn-success" })
+                                @Html.ActionLink("Delete", "DeleteComment", "Admin", new { commentId = item.CommentId }, new { @class = "btn btn-danger" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

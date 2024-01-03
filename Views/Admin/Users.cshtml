@@ -1,0 +1,53 @@
+﻿@using SeyahatRehberi.Models
+@model List<User>
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="mt-0">Kullanıcılar</h2>
+<div class="card">
+    <div class="card-body">
+
+        <div class="table-responsive">
+            <table class="table table-centered mb-0" id="">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>UserName</th>
+                        <th>Email</th>
+                        <th colspan="2">Settings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.Username</td>
+                            <td>@item.Email</td>
+                            <td>
+
+                                @Html.ActionLink("Edit", "EditUser", "Admin", new { userId = item.Id }, new { @class = "btn btn-info" })
+                                @if (!@item.IsActive)
+                                {
+
+                                    @Html.ActionLink("DisActived", "ToggleActivationUser", "Admin", new { userId = item.Id }, new { @class = @"btn btn-secondary" })
+                                }
+                                else
+                                {
+                                    @Html.ActionLink("Activated", "ToggleActivationUser", "Admin", new { userId = item.Id }, new { @class = @"btn btn-success" })
+
+                                }
+                                @Html.ActionLink("Delete", "DeleteUser", "Admin", new { userId = item.Id }, new { @class = "btn btn-danger" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

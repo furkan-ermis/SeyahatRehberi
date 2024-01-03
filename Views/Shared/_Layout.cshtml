@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+@Html.Partial("~/Views/Shared/LayoutPartial/HeaderPartial.cshtml")
+</head>
+<body>
+    @Html.Partial("~/Views/Shared/LayoutPartial/NavbarPartial.cshtml")
+    <div class="body-content" style="margin-top:90px !important;min-height:100vh;">
+        @RenderBody()
+    </div>
+    @Html.Partial("~/Views/Shared/LayoutPartial/ScriptPartial.cshtml")
+    @Html.Partial("~/Views/Shared/LayoutPartial/FooterPartial.cshtml")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/owlcarousel")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

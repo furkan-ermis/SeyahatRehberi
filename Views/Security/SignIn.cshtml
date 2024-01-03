@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "SignIn";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Signup  | Home </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords"
+          content=" Signup free" />
+    <script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+    </script>
+    <link rel="stylesheet" href="~/Content/register/assets/css/style.css" type="text/css" media="all" />
+</head>
+<body>
+    <section class="w3l-login-6">
+        <div class="login-hny">
+            <div class="form-content">
+                <div class="form-right">
+                    <div class="overlay">
+                        <div class="grid-info-form">
+                            <h5>Say hello</h5>
+                            <h3>CREATE ACCOUNT </h3>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est natus facere aperiam!
+                                Tenetur maiores dolore a quod pariatur ut voluptates quae saepe ea quasi laudantium,
+                                iste molestias inventore fuga assumenda.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-left">
+                    <div class="middle">
+                        <h4>Join Us</h4>
+                        <p>Create Your Account, It's Free.</p>
+                    </div>
+                    <form action="@Url.Action("SignIn", "Security")" method="post" class="signin-form">
+                        <div class="form-input">
+                            <label>Name</label>
+                            <input type="text" name="Name" id="Name" placeholder="Name" required />
+                        </div>
+                        <div class="form-input">
+                            <label>Email</label>
+                            <input type="email" name="Email" id="Email" placeholder="Email" required />
+                        </div>
+                        <div class="form-input">
+                            <label>Password</label>
+                            <input type="password" name="Password" id="Password" placeholder="Password" required />
+                        </div>
+
+                        <label class="container">
+                            I agree to <a href="#">Conditions</a> of Use and <a href="#">Privacy</a>
+                            <input type="checkbox" name="IsAgree" id="IsAgree" value="true">
+                            <span class="checkmark"></span>
+                        </label>
+                        <button class="btn">Create account</button>
+                        <button type="button" class="btn">
+                            @Html.ActionLink("GezginGözlemci Login", "Login", "Security", null, new { style = "color:white !important" })
+                        </button>
+
+                    </form>
+                    <div class="copy-right text-center">
+                        <p>
+                            © @DateTime.Now.Year
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>

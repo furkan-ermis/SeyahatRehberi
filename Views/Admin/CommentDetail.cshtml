@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "CommentDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using SeyahatRehberi.ViewModel
+@model WaitingCommentsViewModel
+
+<h2>Comment Details</h2>
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>Comment ID</th>
+            <td>@Model.CommentId</td>
+        </tr>
+        <tr>
+            <th>Comment</th>
+            <td>@Model.Comment</td>
+        </tr>
+        <tr>
+            <th>Blog Title</th>
+            <td>@Model.BlogTitle</td>
+        </tr>
+        <tr>
+            <th>Comment Date</th>
+            <td>@Model.CommentDate</td>
+        </tr>
+        <tr>
+            <th>User ID</th>
+            <td>@Model.UserId</td>
+        </tr>
+        <tr>
+            <th>Username</th>
+            <td>@Model.Username</td>
+        </tr>
+    </table>
+    @Html.ActionLink("Back to List", "GetAwaitingCommentList", new { }, new { @class = "btn btn-info" })
+    @Html.ActionLink("Approve", "ApproveComment", "Admin", new { commentId =@Model.CommentId }, new { @class = "btn btn-success" })
+
+</div>
+
+
+

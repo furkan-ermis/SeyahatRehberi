@@ -1,0 +1,157 @@
+﻿
+@using SeyahatRehberi.ViewModel
+@model List<BlogCardViewModel>
+<style>
+@@import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
+figure.snip1150 {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  margin: 10px;
+  min-width: 220px;
+  max-width: 310px;
+  max-height: 310px;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  background: #000000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+figure.snip1150 * {
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+figure.snip1150 img {
+  opacity: 0.3;
+  max-width: 100%;
+  top: 0;
+  left: 0;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+figure.snip1150 figcaption {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  right: 30px;
+  -webkit-transform: translateY(-75%);
+  transform: translateY(-75%);
+}
+figure.snip1150 figcaption h2 {
+  top: 50%;
+  letter-spacing: -1px;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 10px 0;
+  margin: 0;
+  font-weight: 400;
+}
+figure.snip1150 figcaption h2 span {
+  font-weight: 800;
+  -webkit-transform: translate(-50%, 100%) scale(1.6);
+  transform: translate(-50%, 100%) scale(1.6);
+  display: inline-block;
+}
+figure.snip1150 figcaption:before,
+figure.snip1150 figcaption:after {
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  content: "";
+  display: block;
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+figure.snip1150 figcaption:before {
+  top: 75%;
+  -webkit-transform: rotate(-45deg) translateX(-80%);
+  transform: rotate(-45deg) translateX(-80%);
+}
+figure.snip1150 figcaption:after {
+  top: 75%;
+  -webkit-transform: rotate(-45deg) translateX(80%);
+  transform: rotate(-45deg) translateX(80%);
+}
+figure.snip1150.blue {
+  background: #123851;
+}
+figure.snip1150.red {
+  background: #581a14;
+}
+figure.snip1150.yellow {
+  background: #7f5006;
+}
+figure.snip1150.green {
+  background: #104627;
+}
+figure.snip1150.navy {
+  background: #07090c;
+}
+figure.snip1150 a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+}
+figure.snip1150:hover img,
+figure.snip1150.hover img {
+  opacity: 0.8;
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+figure.snip1150:hover figcaption h2,
+figure.snip1150.hover figcaption h2 {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+figure.snip1150:hover figcaption h2 span,
+figure.snip1150.hover figcaption h2 span {
+  -webkit-transform: translate(-50%, 110%) scale(1.9);
+  transform: translate(-50%, 110%) scale(1.9);
+}
+figure.snip1150:hover figcaption:before,
+figure.snip1150.hover figcaption:before {
+  -webkit-transform: rotate(-45deg) translateX(-90%);
+  transform: rotate(-45deg) translateX(-90%);
+}
+figure.snip1150:hover figcaption:after,
+figure.snip1150.hover figcaption:after {
+  -webkit-transform: rotate(-45deg) translateX(90%);
+  transform: rotate(-45deg) translateX(90%);
+}
+
+</style>
+<div class="best-rooms py-5" style="background-color:black" >
+    <div class="container py-md-5 ">
+        <div class="title-content text-left mb-lg-5 mb-4">
+            <h3 class="hny-title text-danger">Son Yazılar</h3>
+        </div>
+        @{string[] colors = new string[] { "red", "green", "blue", "navy", "yellow" };
+            int i = 0;
+        }
+        <div class=" d-flex ">
+
+            @foreach (var item in Model)
+            {
+                <figure class="snip1150 @colors[i]">
+                    <img style="height:100% !important" src="@item.Image" alt="sq-sample6" />
+                    <figcaption>
+                        <h3>@item.Title<br /></h3><span>@item.City</span>
+                    </figcaption>
+                    <a href="@Url.Action("BlogDetail", "Travel", new { @item.BlogId})"></a>
+                </figure>
+                i += 1;
+            }
+        </div>
+
+    </div>
+</div>
+<script>
+    $(".hover").mouseleave(
+        function () {
+            $(this).removeClass("hover");
+        }
+    );
+</script>

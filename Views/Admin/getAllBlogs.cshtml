@@ -1,0 +1,42 @@
+﻿@using SeyahatRehberi.Models
+@model List<BlogPost>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2 class="mt-0">Bloglar</h2>
+<div class="card">
+    <div class="card-body">
+
+        <div class="table-responsive">
+            <table class="table table-centered mb-0" id="">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>CityName</th>
+                        <th>CreationDate</th>
+                        <th>IsRaported</th>
+                        <th colspan="2">Settings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Title</td>
+                            <td>@item.City.CityName</td>
+                            <td>@item.CreationDate</td>
+                            <td>@item.IsRaported</td>
+                            <td>
+                                @Html.ActionLink("Edit", "EditBlogs", "Admin", new { blogId = item.Id }, new { @class = "btn btn-warning" }) |
+                                @Html.ActionLink("Delete", "DeleteBlogs", "Admin", new { blogId = item.Id }, new { @class = "btn btn-danger" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

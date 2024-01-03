@@ -1,0 +1,206 @@
+﻿<!--header-->
+<header id="site-header" class="fixed-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg stroke">
+            <h1>
+                <a class="navbar-brand mr-lg-5" href="@Url.Content("~/Home/Index")">
+                    GezginGözlemci
+                </a>
+            </h1>
+            <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
+                    data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto ">
+                    
+                    @{
+                        switch (ViewBag.Title)
+                        {
+                            case "Home":
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="@Url.Content("~/Home/Index")">Ana Sayfa </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="@Url.Content("~/Home/About")">Hakkımızda</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("BlogList", "Travel")">Blog</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="@Url.Action("City", "Travel")">Şehirler</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("Contact", "Home")">İletişim</a>
+                                </li>
+                                break;
+                            case "About":
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="@Url.Content("~/Home/Index")">Ana Sayfa </a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="@Url.Content("~/Home/About")">Hakkımızda</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("BlogList", "Travel")">Blog</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="@Url.Action("City", "Travel")">Şehirler</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("Contact", "Home")">İletişim</a>
+                                </li>
+                                break;
+                            case "Blog":
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="@Url.Content("~/Home/Index")">Ana Sayfa </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="@Url.Content("~/Home/About")">Hakkımızda</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="@Url.Action("BlogList", "Travel")">Blog</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="@Url.Action("City", "Travel")">Şehirler</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("Contact", "Home")">İletişim</a>
+                                </li>
+                                break;
+                            case "City":
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="@Url.Content("~/Home/Index")">Ana Sayfa </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="@Url.Content("~/Home/About")">Hakkımızda</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("BlogList", "Travel")">Blog</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="@Url.Action("City", "Travel")">Şehirler</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("Contact", "Home")">İletişim</a>
+                                </li>
+                                break;
+                            case "Contact":
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="@Url.Content("~/Home/Index")">Ana Sayfa </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="@Url.Content("~/Home/About")">Hakkımızda</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("BlogList", "Travel")">Blog</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="@Url.Action("City", "Travel")">Şehirler</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="@Url.Action("Contact", "Home")">İletişim</a>
+                                </li>
+                                break;
+                            default:
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="@Url.Content("~/Home/Index")">Ana Sayfa </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="@Url.Content("~/Home/About")">Hakkımızda</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("BlogList", "Travel")">Blog</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="@Url.Action("City", "Travel")">Şehirler</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="@Url.Action("Contact", "Home")">İletişim</a>
+                                </li>
+                                break;
+                        }
+                    }
+                </ul>
+            </div>
+            @if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                <div class="d-lg-block d-none">
+                    @{
+                        bool isAdmin = HttpContext.Current.User.IsInRole("Admin");
+                    }
+                    @if (isAdmin)
+                    {
+                        <a href="@Url.Action("Index", "Admin")" class="btn btn-outline-secondary nav-item">Account</a>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("Index", "Account")" class="btn btn-outline-secondary nav-item">Account</a>
+                    }
+
+
+
+                    &nbsp;
+                    &nbsp;
+                </div>
+                <div >
+                    <a href="@Url.Action("Logout", "Security")" class="btn  btn-outline-secondary nav-item">Logout</a>
+                </div>
+            }
+            else
+            {
+                <div >
+                    <a href="@Url.Action("Login", "Security")" class="btn btn-secondary nav-item">Login</a>
+                </div>
+            }
+            <div class="mobile-position">
+                <nav class="navigation">
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox">
+                            <div class="mode-container " style="cursor:pointer">
+                                <i class="gg-moon"></i>
+                                <i class="gg-sun"></i>
+                            </div>
+                        </label>
+                    </div>
+                </nav>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<script>
+    window.addEventListener("scroll", function () {
+        var scroll = window.scrollY || document.documentElement.scrollTop;
+
+        if (scroll >= 80) {
+            document.getElementById("site-header").classList.add("nav-fixed");
+        } else {
+            document.getElementById("site-header").classList.remove("nav-fixed");
+        }
+    });
+
+    // Ana navigasyonun Aktif Sınıfını Ekle ve Kaldır
+    document.querySelector(".navbar-toggler").addEventListener("click", function () {
+        document.querySelector("header").classList.toggle("active");
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        if (window.innerWidth > 991) {
+            document.querySelector("header").classList.remove("active");
+        }
+
+        window.addEventListener("resize", function () {
+            if (window.innerWidth > 991) {
+                document.querySelector("header").classList.remove("active");
+            }
+        });
+    });
+
+
+
+</script>

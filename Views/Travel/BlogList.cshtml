@@ -1,0 +1,6 @@
+﻿@model int?
+@{
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    @Html.Action("BlogsPartial", "Travel", new { cityId = Model })

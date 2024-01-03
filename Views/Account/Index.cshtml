@@ -1,0 +1,48 @@
+﻿@model IEnumerable<SeyahatRehberi.Models.BlogPost>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MemberLayout.cshtml";
+}
+
+
+<p>
+    @Html.ActionLink("Create New", "Create", new {}, new { @class = "btn btn-success" })
+</p>
+
+                <h3 class="mt-0">Yazılarım</h3>
+        <div class="card">
+            <div class="card-body">
+
+                <div class="table-responsive">
+                    <table class="table table-centered mb-0" id="">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Title</th>
+                                <th>CityName</th>
+                                <th>CreationDate</th>
+                                <th>IsRaported</th>
+                                <th colspan="2">Settings</th> 
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.Title</td>
+                                    <td>@item.City.CityName</td>
+                                    <td>@item.CreationDate</td>
+                                    <td>@item.IsRaported</td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { blogId = item.Id }, new {@class="btn btn-warning"}) |
+                                        @Html.ActionLink("Delete", "Delete", new { blogId = item.Id }, new {@class="btn btn-danger"})
+                                    </td>
+                                </tr>
+                            }
+                            </tbody>
+                    </table>
+                </div> <!-- end .table-responsive-->
+            </div> <!-- end card-body -->
+        </div> <!-- end card -->

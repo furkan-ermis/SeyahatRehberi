@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Invent Signup Form Responsive Widget Template | Home :: W3layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords"
+          content="Invent Signup Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+    </script>
+    <link rel="stylesheet" href="~/Content/register/assets/css/style.css" type="text/css" media="all" />
+</head>
+
+<body>
+    <section class="w3l-login-6">
+        <div class="login-hny">
+            <div class="form-content">
+                <div class="form-right">
+                    <div class="overlay">
+                        <div class="grid-info-form">
+                            <h3>Write Your Journey  Share Your Experiences</h3>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est natus facere aperiam!
+                                Tenetur maiores dolore a quod pariatur ut voluptates quae saepe ea quasi laudantium,
+                                iste molestias inventore fuga assumenda.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-left">
+                    <div class="middle">
+                        <h4>Login</h4>
+                    </div>
+                    <form action="#" method="post" class="signin-form">
+                        <div class="form-input">
+                            <label>Email</label>
+                            <input type="email" name="Email" id="Email" placeholder="Email" required />
+                        </div>
+                        <div class="form-input">
+                            <label>Password</label>
+                            <input type="password" name="Password" id="Password" placeholder="Password" required />
+                        </div>
+                        <label >@ViewBag.Message</label>
+                        
+                        <button class="btn">Login account</button>
+                        <button type="button" class="btn"> @Html.ActionLink("GezginGözlemci Signup", "SignIn", "Security", null, new { style = "color:white !important" })
+                    </button>
+
+</form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- //login-section -->
+</body>
+
+</html>
